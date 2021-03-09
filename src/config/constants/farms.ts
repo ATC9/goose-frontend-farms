@@ -21,15 +21,15 @@ const farms: FarmConfig[] = [
   {
     pid: 1,
     risk: 5,
-    lpSymbol: 'JUICY-BNB LP',
+    lpSymbol: 'EGG-BNB LP',
     lpAddresses: {
       97: '',
-      56: '0x88e9475cba971232e200b3dfe56b61d33ffa5da9',
+      56: '0xd1b59d11316e87c3a0a069e80f590ba35cd8d8d3',
     },
-    tokenSymbol: 'JUICY',
+    tokenSymbol: 'EGG',
     tokenAddresses: {
       97: '',
-      56: '0x7c5BefeDe8b361283DA678aCbDA70Ba2d96e2D44',
+      56: '0xf952fc3ca7325cc27d15885d37117676d25bfda6',
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
