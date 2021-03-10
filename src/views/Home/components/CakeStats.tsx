@@ -27,10 +27,10 @@ const CakeStats = () => {
   const totalSupply = useTotalSupply()
   const burnedBalance = useBurnedBalance(getCakeAddress())
   const farms = useFarms();
-  const eggPrice = usePriceCakeBusd();
+  const juicyPrice = usePriceCakeBusd();
   const circSupply = totalSupply ? totalSupply.minus(burnedBalance) : new BigNumber(0);
   const cakeSupply = getBalanceNumber(circSupply);
-  const marketCap = eggPrice.times(circSupply);
+  const marketCap = juicyPrice.times(circSupply);
 
   let juicyPerBlock = 0;
   if(farms && farms[0] && farms[0].juicyPerBlock){
@@ -41,18 +41,18 @@ const CakeStats = () => {
     <StyledCakeStats>
       <CardBody>
         <Heading size="xl" mb="24px">
-          {TranslateString(534, 'Egg Stats')}
+          {TranslateString(534, 'Juicy Stats')}
         </Heading>
         <Row>
           <Text fontSize="14px">{TranslateString(10005, 'Market Cap')}</Text>
           <CardValue fontSize="14px" value={getBalanceNumber(marketCap)} decimals={0} prefix="$" />
         </Row>
         <Row>
-          <Text fontSize="14px">{TranslateString(536, 'Total Minted')}</Text>
+          <Text fontSize="14px">{TranslateString(536, 'Total Juicy Minted')}</Text>
           {totalSupply && <CardValue fontSize="14px" value={getBalanceNumber(totalSupply)} decimals={0} />}
         </Row>
         <Row>
-          <Text fontSize="14px">{TranslateString(538, 'Total Burned')}</Text>
+          <Text fontSize="14px">{TranslateString(538, 'Total Juicy Burned')}</Text>
           <CardValue fontSize="14px" value={getBalanceNumber(burnedBalance)} decimals={0} />
         </Row>
         <Row>
@@ -60,7 +60,7 @@ const CakeStats = () => {
           {cakeSupply && <CardValue fontSize="14px" value={cakeSupply} decimals={0} />}
         </Row>
         <Row>
-          <Text fontSize="14px">{TranslateString(540, 'New EGG/block')}</Text>
+          <Text fontSize="14px">{TranslateString(540, 'New Juicy/block')}</Text>
           <Text bold fontSize="14px">{juicyPerBlock}</Text>
         </Row>
       </CardBody>
